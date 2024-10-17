@@ -9,9 +9,9 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: script.tex
+          root_file: scripts/script.tex
       - name: Upload PDF file
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: script.pdf
+          files: scripts/script.pdf
