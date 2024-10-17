@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper,headinclude,twoside, open=right,numbers=noenddot]{scrreprt}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage{amsmath} 
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{amssymb}
+
+\title{Introduction to Modern Cryptography}
+\author{ \textbf{gelesen von Prof. Rösler} \\
+    an der FAU Erlangen \\
+    \vspace{1cm}
+    in \LaTeX{} umgesetzt von Moritz Palm \\
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Motivation}
+\label{sec:motivation}
+
+\subsection{Caesars Cipher}
+\label{ssec:casears_cipher}
+
+\subsection{Enigma}
+\label{ssec:enigma}
+
+\subsection{Cryptology}
+\label{ssec:cryptology}
+Cryptology (translated from greek "studying secrets") can be divided into two separate branches: Cryptography, the science of designing constructions and proving their security and Cryptanalysis, the science of breaking constructions or their underlying assumptions
+
+
+\subsection{Kerkhoffs Principle}
+\label{ssec:kerkhoffs_principle}
+
+\begin{displayquote}
+A cryptographic construction should be secure even if the adversary knows all details about the construction with the exception of the secret key material. In particular, all algorithms should be publicly known.
+\end{displayquote}
+
+\subsection{Provable Security}
+\begin{enumerate}
+\item Definition of Security
+\begin{enumerate}
+\item Goal(s) of adversary (e.g. learning the message $m$, authenticating as $A$, ...)
+\item Capabilities of adversary (e.g. observing cybertexts, knowing parts of plaintexts, ...)
+\item Functionality of protocol class (e.g. delivery of payload messages, ...)
+\end{enumerate}
+\item Specification of construction
+\item Specification of computational assumptions
+\begin{itemize}
+\item Existence of secure components (e.g. hash function, secure\footnote{with regard to its definition} randomness generator, ...)
+\item  of computational problems (e.g. factoring, discrete logarithm, learning with errors, ...)
+\item Computational resources of users \& adversary (e.g. runtime, memory, classical vs. quantum computing, ...)
+\item ...
+\end{itemize}
+\item Proof of security $\rightsquigarrow$ Reduction
+\end{enumerate}
+
+\section{TLS \& Double Ratchet}
+\label{sec:tls_double_ratchet}
+
+\subsection{Transport Layer Security (TLS)}
+\label{ssec:tls}
+Cryptographic protocol designed to enable secure communication over a network (e.g. HTTPS).
+Currently standardized  in version 1.3.
+Browser vendors, standardization experts and academic experts were involved in the development.
+Its security has been proven using both reductions and tool-based approaches.
+
+\subsection{Double Ratchet Algorithm}
+\label{ssec:double_ratchet}
+
+\begin{itemize}
+\item used in Signal, Whatsapp, iMessage, ...
+\item de facto Standard (but not standardized by a standardization organization)
+\item Analyses and extensions developed by academia
+\end{itemize}
+
+
+
+
+\chapter{Key Derivation}
+\label{chap:key_derivation}
+\end{document}
